@@ -1,5 +1,6 @@
 package org.traffic.counter.metric;
 import org.traffic.counter.HalfHourReading;
+
 /** Accumulates the total number of cars seen across all readings. */
 public class TotalVolumeMetric implements TrafficMetric {
     private int totalCars;
