@@ -14,6 +14,7 @@ public final class TestHelper {
         return new HalfHourReading(LocalDateTime.parse(timestamp), cars);
     }
 
+    /** Captures stdout from printReport() so tests can assert against it. */
     public static String captureReport(TrafficMetric metric) {
         PrintStream original = System.out;
         ByteArrayOutputStream out = new ByteArrayOutputStream();

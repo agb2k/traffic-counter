@@ -9,7 +9,8 @@ A Java 25 CLI tool that processes log files from an automated traffic counter an
 
 ## How to Run
 
-Run `Main.java` directly from IntelliJ. It uses the bundled sample input at `src/main/resources/input` by default.
+- Run `Main.java` directly from IntelliJ. 
+- It uses the bundled sample input at `src/main/resources/input` by default.
 
 ## How It Works
 
@@ -39,8 +40,6 @@ HalfHourReading.parse()  →  TrafficLogProcessor  →  [TotalVolume, DailyVolum
 - Input is chronologically ordered.
 
 ## Trade-offs
-
-- Lombok is used for `@UtilityClass` on `TrafficLogProcessor` to reduce boilerplate. It's a compile-time-only dependency.
 - `printReport()` writes directly to `stdout`. For a larger system, returning a structured result would be more testable, but for this scope it keeps things simple.
 - The single-pass design means each reading passes through once. Metrics must track their own state (e.g. last 3 readings, top 3 seen so far) since they can't re-examine earlier data.
 
